@@ -19,9 +19,9 @@ class _CounterPageState extends State<CounterPage> {
       body: Center(
         child: Count(
           count: count,
-          onCountChanged: (int val) {
+          onCountChanged: () {
             setState(() {
-              count += val;
+              count += 1;
             });
           },
         ),
