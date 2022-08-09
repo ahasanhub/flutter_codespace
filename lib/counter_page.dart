@@ -14,7 +14,7 @@ class _CounterPageState extends State<CounterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Widget Communication'),
+        title: const Text('Counter Widget'),
       ),
       body: Center(
         child: Count(
