@@ -19,6 +19,11 @@ class _CounterPageState extends State<CounterPage> {
       body: Center(
         child: Count(
           count: count,
+          onCountPressed: (val) {
+            setState(() {
+              count += val;
+            });
+          },
           onCountChanged: () {
             setState(() {
               count += 1;

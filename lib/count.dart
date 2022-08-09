@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class Count extends StatelessWidget {
   final int count;
-  //final VoidCallback onCountPressed;
-  final VoidCallback onCountChanged;
+  final void Function(int) onCountPressed;
+  final void Function() onCountChanged;
   const Count(
       {required this.count,
-      //required this.onCountPressed,
+      required this.onCountPressed,
       required this.onCountChanged,
       super.key});
 
@@ -14,9 +14,12 @@ class Count extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        IconButton(onPressed: onCountChanged, icon: const Icon(Icons.add)),
+        IconButton(
+            onPressed: () => onCountPressed(1), icon: const Icon(Icons.add)),
         Text('$count'),
-        IconButton(onPressed: onCountChanged, icon: const Icon(Icons.remove)),
+        IconButton(
+            onPressed: () => onCountPressed(-1),
+            icon: const Icon(Icons.remove)),
       ],
     );
   }
